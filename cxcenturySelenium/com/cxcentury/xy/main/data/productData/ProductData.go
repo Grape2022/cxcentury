@@ -1,0 +1,5 @@
+package productData
+
+func AddProduct() {
+
+}
