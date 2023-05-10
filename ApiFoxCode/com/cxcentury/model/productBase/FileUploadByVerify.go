@@ -32,7 +32,7 @@ func main() {
 	url := `http://192.168.10.101:8182/prod-api`
 
 	loginPath := url + `/login`
-	data := `{"username":"18565078921","password":"zexing970202"}`
+	data := `{"username":"18565078921","password":"123456789+"}`
 	loginMethod := `POST`
 	methodDv.Data = &data
 	methodDv.Method = &loginMethod
