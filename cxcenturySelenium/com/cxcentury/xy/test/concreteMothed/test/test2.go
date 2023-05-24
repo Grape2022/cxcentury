@@ -64,7 +64,7 @@ func Test2() {
 
 		panic(err)
 	}
-	password.SendKeys("YuMei000804")
+	password.SendKeys("123456789+")
 
 	isLogin, err := wd.FindElement(selenium.ByCSSSelector, ".el-button--primary")
 	if err != nil {

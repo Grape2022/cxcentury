@@ -1,12 +1,14 @@
 package main
 
-import "cxcenturySelenium/com/cxcentury/xy/main/controller"
+import (
+	"cxcenturySelenium/com/cxcentury/xy/test/concreteMothed/test"
+)
 
 func main() {
 
-	controller.Controller()
+	//controller.Controller()
 	//测试
 	//test.Test()
-	//test.Test2()
+	test.Test2()
 
 }
