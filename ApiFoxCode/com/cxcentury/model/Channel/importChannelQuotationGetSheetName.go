@@ -46,24 +46,22 @@ func main() {
 
 // 文件上传
 func (dv MethodDataValue) FileUploadByVerify() (bodys *string) {
-	url := "http://192.168.10.101:8182/prod-api/file/uploadByVerify"
+	url := "http://192.168.10.101:8182/prod-api/logisticsChannelForgroups/importChannelQuotationGetSheetName"
 	method := "POST"
 
 	payload := &bytes.Buffer{}
 	writer := multipart.NewWriter(payload)
-	_ = writer.WriteField("Content-Type", "image/jpeg")
-	file, errFile2 := os.Open("D:\\Starfish\\Image\\ArcFoxEvent.jpg")
+	file, errFile1 := os.Open(
+		"C:\\Users\\Administrator\\AppData\\Roaming\\apifox\\ExternalPrograms\\com\\cxcentury\\file\\xlsx\\11.21欧美专线VIP价格（海杰运通） (1)改名字了.xlsx")
 	defer file.Close()
-	part2,
-		errFile2 := writer.CreateFormFile("file", filepath.Base("D:\\Starfish\\Image\\ArcFoxEvent.jpg"))
-	_, errFile2 = io.Copy(part2, file)
-	if errFile2 != nil {
-		fmt.Println(errFile2)
+	part1,
+		errFile1 := writer.CreateFormFile("file", filepath.Base(
+		"C:\\Users\\Administrator\\AppData\\Roaming\\apifox\\ExternalPrograms\\com\\cxcentury\\file\\xlsx\\11.21欧美专线VIP价格（海杰运通） (1)改名字了.xlsx"))
+	_, errFile1 = io.Copy(part1, file)
+	if errFile1 != nil {
+		fmt.Println(errFile1)
 		return
 	}
-	_ = writer.WriteField("size", "5")
-	_ = writer.WriteField("format", "jpg,jpeg,png,gif")
-	_ = writer.WriteField("unit", "M")
 	err := writer.Close()
 	if err != nil {
 		fmt.Println(err)
@@ -78,7 +76,7 @@ func (dv MethodDataValue) FileUploadByVerify() (bodys *string) {
 		return
 	}
 	req.Header.Add("Authorization", *dv.Token)
-	req.Header.Add("User-Agent", "Apifox/1.0.0 (https://www.apifox.cn)")
+	req.Header.Add("User-Agent", "Apifox/1.0.0 (https://apifox.com)")
 
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	res, err := client.Do(req)
